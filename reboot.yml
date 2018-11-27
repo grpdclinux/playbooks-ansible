@@ -1,0 +1,10 @@
+---
+- hosts: docker
+  remote_user: rreis
+      
+  tasks:
+    - name: reboot das máquinas.
+      shell: shutdown -r now 
+#      become: yes    
+#      become_method: sudo  
+...

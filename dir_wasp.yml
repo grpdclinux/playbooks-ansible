@@ -1,0 +1,14 @@
+---
+- hosts: "wasp"
+  serial: 5 
+  remote_user: rreis        
+
+  tasks:
+  - name: Alterando Dono, Grupo e permissões do diretório
+    file:
+      path: /opt/dir/subdir/
+      state: directory
+      owner: <dono do dir>
+      group: <grupo dono do dir>
+      mode: 0775
+

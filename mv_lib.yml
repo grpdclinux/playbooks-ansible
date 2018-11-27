@@ -1,0 +1,15 @@
+---
+- hosts: "wasp"
+  serial: 5 
+  remote_user: rreis        
+
+  tasks:
+  - name: Alterando Dono, Grupo e permissões do diretório auditoria     
+    file:
+      path: /dir/subdir/subdir/subdir/subdir/
+      path: /dir/subdir/subdir/subdir/ 
+      state: directory
+      owner: dono
+      group: grupo
+      mode: 0775
+

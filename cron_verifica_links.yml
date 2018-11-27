@@ -1,0 +1,31 @@
+---
+- hosts: "compe"
+  remote_user: rreis
+
+  tasks:
+  - file:
+      path: /opt/scripts/
+      state: directory
+      owner: root
+      group: root
+      mode: 0655
+
+  - copy:
+      src: /home/rreis/ansible/scripts/verifica_links.sh
+      dest: /opt/scripts/verifica_links.sh
+      owner: root
+      group: root
+      mode: 0755
+      backup: yes
+
+  - service:
+      name: cron
+      state: started
+
+  - cron:
+      name: "Verifica Links Simbolicos dos servidores"
+      minute: "*/30"
+      job: "/opt/scripts/verifica_links.sh"
+      user: root
+      cron_file: verifica_links
+...
