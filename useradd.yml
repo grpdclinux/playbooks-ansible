@@ -15,5 +15,5 @@
     - name: Padrinozando senha 
       user:
        name: usrfly
-       password: '$6$salt$066BKycw1W.2KO3DJcaR8KI8qvs4bOq3edEfuGdYr3JxnonNXX6hAjQnJ5T8DfcQ6MXTgYk8mNAeY7CKacSA5.'
+       password: 'Hash da senha do usuário'
       tags: user
