@@ -1,0 +1,19 @@
+---
+- hosts: demanda
+  become: true
+  become_user: root
+  remote_user: rreis
+  gather_facts: false
+  tasks:
+    - name: Criando usuario remoto
+      user:
+       name: usrfly
+       comment: I1812-030292 - usuario de banco de dados
+       shell: /bin/false
+      tags: usrfly
+
+    - name: Padrinozando senha 
+      user:
+       name: usrfly
+       password: '$6$salt$066BKycw1W.2KO3DJcaR8KI8qvs4bOq3edEfuGdYr3JxnonNXX6hAjQnJ5T8DfcQ6MXTgYk8mNAeY7CKacSA5.'
+      tags: user
